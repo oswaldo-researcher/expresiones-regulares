@@ -14,17 +14,20 @@ Limites
 $       - Final de una cadena de texto
 
 Cuantificadores:
-nota: los cuantificadores se pueden usar seguido de los token (es decir los \d , \w , \s), para fijar un numero determinado de coincidencias.
+Los cuantificadores se pueden usar seguido de los token (es decir los \d , \w , \s) o tambien de los Agrupadores (), para fijar un numero determinado de coincidencias.
 *       - 0 o Más
 +       - 1 o Más
-?       - 0 o Uno
+?       - 0 o Uno // este despues del token significa que sea opcional, por ejemplo /^\w+\s?$/ que inicie ^ una palabra \w con uno o mas caracteres + que pueda que tenga un espacio o tab \s? al final $
 {3}     - Numero Exacto
 {3,4}   - Rango de Numeros (Minimo, Maximo)
 
 Conjuntos de Caracteres
-[]      - Caracteres dentro de los brackets
-[^ ]    - Caracteres que NO ESTAN dentro de los brackets
+[]      - Caracteres dentro de los brackets // Agrupa caracteres de coincidencias se pueden combinar con tokens, por ejemplo: [\s-] permite espaciados \s y un -
+                                            // Nota: no es necesario escapar los catacteres especiales dentro de los agrupadores [\s.] el . no necesito escaparlo \.
+[^ ]    - Caracteres que NO ESTAN dentro de los brackets // el caret ^ dentro de [] invierte las coincidencias declaradas, por ejemplo: /[^a-zA-Z]/g seleciona todo lo que no sean letras mayusculas o minusculas
 
-Grupos
+Grupos o Agrupadores
 ( )     - Grupo
 |       - Uno u otro
+sirven para agrupar coincidencias (449 | 448) 499 ó 448, tambien para agrupar reglas de coincidencia para prevenis repeticiones /[\s-]\d{2}[\s-]\d{2}/g podria reducirse a /([\s-]\d{2}){2}/g con el {2} le digo que esa regla se puede repetir 2 veces
+
