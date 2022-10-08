@@ -14,6 +14,7 @@ Limites
 $       - Final de una cadena de texto
 
 Cuantificadores:
+nota: los cuantificadores se pueden usar seguido de los token (es decir los \d , \w , \s), para fijar un numero determinado de coincidencias.
 *       - 0 o Más
 +       - 1 o Más
 ?       - 0 o Uno
