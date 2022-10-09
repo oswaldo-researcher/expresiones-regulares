@@ -6,3 +6,5 @@ Son secuencias de caracteres que especifica un patrón de búsqueda. Por lo gene
 ### `Web para probar las expresiones regulares "regexer":` https://regexr.com/
 ## Video de referencia:
 https://www.youtube.com/watch?v=wfogZfIS03U
+
+example: regex to match servers errors : https://regexr.com/6vmri
